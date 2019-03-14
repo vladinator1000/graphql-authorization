@@ -1,0 +1,27 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "An exapmle illustrating how to use graphql-authorization with Apollo server",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/server.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "babel-plugin-import-graphql": "^2.7.0",
+    "nodemon": "^1.18.10"
+  }
+}

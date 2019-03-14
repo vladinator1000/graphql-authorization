@@ -1,0 +1,30 @@
+{
+  "name": "graphql-authorization",
+  "version": "0.0.1",
+  "description": "Express.js middleware that accepts or rejects GraphQL queries based on the scope of the user",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savovs/graphql-authorization.git"
+  },
+  "keywords": [
+    "graphql",
+    "authorization",
+    "express"
+  ],
+  "author": "Vlady Veselinov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savovs/graphql-authorization/issues"
+  },
+  "homepage": "https://github.com/savovs/graphql-authorization#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {}
+}
