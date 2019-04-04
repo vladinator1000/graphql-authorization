@@ -1,16 +1,19 @@
-import { makeExecutableSchema, mergeSchemas } from "graphql-tools";
+import path from "path";
+import { makeExecutableSchema } from "graphql-tools";
+import { fileLoader, mergeTypes, mergeResolvers } from "merge-graphql-schemas";
 
-import bookTypes from "./books/bookTypes.graphql";
-import bookResolvers from "./books/bookResolvers";
+const types = fileLoader(path.join(__dirname, "./modules/**/*.gql"), {
+  recursive: true
+});
 
-const types = [bookTypes];
-const resolvers = [bookResolvers];
-
-const schemas = types.map((typeDefs, index) =>
-  makeExecutableSchema({
-    typeDefs,
-    resolvers: resolvers[index]
-  })
+const resolvers = fileLoader(
+  path.join(__dirname, "./modules/**/*.resolvers.*"),
+  {
+    recursive: true
+  }
 );
 
-export default mergeSchemas({ schemas });
+export default makeExecutableSchema({
+  typeDefs: mergeTypes(types),
+  resolvers: mergeResolvers(resolvers)
+});
